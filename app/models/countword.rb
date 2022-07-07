@@ -1,0 +1,2 @@
+class Countword < ApplicationRecord
+end
