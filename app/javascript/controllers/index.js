@@ -9,3 +9,9 @@ application.register("hello", HelloController)
 
 import WordcountersController from "./wordcounters_controller.js"
 application.register("wordcounters", WordcountersController)
+
+
+import { Application } from '@hotwired/stimulus'
+import TextareaAutogrow from 'stimulus-textarea-autogrow'
+
+application.register('textarea-autogrow', TextareaAutogrow)

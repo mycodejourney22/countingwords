@@ -1,7 +1,9 @@
+
 <div class="container mt-5" data-controller= "wordcounters">
   <%= simple_form_for @countword, data: { action: "keyup->wordcounters#send" } do |f| %>
-  <%= f.input :words , input_html: { data: { wordcounters_target: "form" } }%>
+  <%= f.input :words , input_html: { data: { wordcounters_target: "form" , controller: "textarea-autogrow"}}  %>
 <% end %>
+
 
   <div class="mt-5" data-wordcounters-target="item">
     <p>Character count: <span> 0 </span></p>
