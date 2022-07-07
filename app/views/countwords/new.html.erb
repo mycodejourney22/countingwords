@@ -1,7 +1,6 @@
 <div class="container mt-5" data-controller= "wordcounters">
-  <%= simple_form_for @countword, data: { action: "submit->wordcounters#send" } do |f| %>
+  <%= simple_form_for @countword, data: { action: "keyup->wordcounters#send" } do |f| %>
   <%= f.input :words , input_html: { data: { wordcounters_target: "form" } }%>
-  <%= f.submit "Count words", class: "btn btn-primary" %>
 <% end %>
 
   <div class="mt-5" data-wordcounters-target="item">
