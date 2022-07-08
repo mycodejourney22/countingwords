@@ -1,6 +1,6 @@
 class CountwordsController < ApplicationController
 
-  def new
+  def index
     @countword = Countword.new
   end
 
