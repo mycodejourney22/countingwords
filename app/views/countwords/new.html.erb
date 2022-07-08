@@ -1,16 +1,21 @@
 
 <div class="container mt-5" data-controller= "wordcounters">
-  <%= simple_form_for @countword, data: { action: "keyup->wordcounters#send"} do |f| %>
-  <%= f.input :words , input_html: { data: { wordcounters_target: "form" , controller: "textarea-autogrow" , action: "select->wordcounters#hightlight"}}  %>
-<% end %>
+  <div class="row">
+  <div class="col-8">
+    <%= simple_form_for @countword, data: { action: "keyup->wordcounters#send"} do |f| %>
+      <%= f.input :words , input_html: { data: { wordcounters_target: "form" , controller: "textarea-autogrow" , action: "select->wordcounters#hightlight"} , class: "form"}  %>
+    <% end %>
+  </div>
 
-
-  <div class="mt-5" data-wordcounters-target="item">
-    <p>Character count: <span> 0 </span></p>
-    <p>Character count without spaces: <span> 0 </span> </p>
-    <p>Line count: <span> 0 </span> </p>
-    <p>Word count: <span> 0 </span></p>
-    <p>Sentence count: <span> 0 </span></p>
-    <p>paragraph_count: <span> 0 </span></p>
+    <div class="col-4">
+      <div class="mt-4" data-wordcounters-target="item">
+        <p>Character count: <span> 0 </span></p>
+        <p>Character count without spaces: <span> 0 </span> </p>
+        <p>Line count: <span> 0 </span> </p>
+        <p>Word count: <span> 0 </span></p>
+        <p>Sentence count: <span> 0 </span></p>
+        <p>paragraph_count: <span> 0 </span></p>
+      </div>
+    </div>
   </div>
 </div>
