@@ -4,7 +4,6 @@ import { Controller } from "@hotwired/stimulus"
 export default class extends Controller {
   static targets = ["item", "form"]
 
-
   connect() {
   }
 
@@ -22,7 +21,6 @@ export default class extends Controller {
       selectArea =  document.createRange().text
     }
     this.#spellWords(selectArea)
-
   }
 
   #forWords (myWord, data) {
@@ -64,7 +62,6 @@ export default class extends Controller {
       .then(response => response.json())
       .then(data => this.#forWords(myWord, data))
       .catch(err => console.error(err));
-
   }
 
 }
