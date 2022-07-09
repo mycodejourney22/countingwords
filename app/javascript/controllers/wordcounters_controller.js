@@ -23,6 +23,20 @@ export default class extends Controller {
     this.#spellWords(selectArea)
   }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   #forWords (myWord, data) {
     this.wordArr = []
     this.errorCount = data.spellingErrorCount
@@ -38,14 +52,14 @@ export default class extends Controller {
     const sentCount = myWord.split('.').length
     const paraCount = myWord.split("\n\n").length
     const lineCount = myWord.split(/\r\n|\r|\n/).length
-    this.itemTarget.innerHTML =  `<p>Character count: <span> ${charaWord} </span></p>
-                                <p>Character count without spaces: <span> ${nospaceChar} </span> </p>
-                                <p>Line count: <span> ${lineCount} </span> </p>
-                                <p>Word count: <span> ${wordCount} </span></p>
-                                <p>Sentence count: <span> ${sentCount} </span></p>
-                                <p>Error count: <span> ${this.errorCount} </span></p>
-                                <p>Paragraph: <span> ${paraCount} </span></p>
-                                <p>Wrong words: <span> ${this.wordArr.join(" ")} </span></p>
+    this.itemTarget.innerHTML =  `<p><span class="word-design">Character count: </span>  <span> ${charaWord} </span></p>
+                                  <p><span class="word-design">Character count without spaces: </span><span> ${nospaceChar} </span> </p>
+                                  <p><span class="word-design">Line count: </span><span> ${lineCount} </span> </p>
+                                  <p><span class="word-design">Word count: </span><span> ${wordCount} </span></p>
+                                  <p><span class="word-design">Sentence count: </span><span> ${sentCount} </span></p>
+                                  <p><span class="word-design">Wrong words count: </span><span> ${this.errorCount} </span></p>
+                                  <p><span class="word-design">Paragraph count: </span><span> ${paraCount} </span></p>
+                                  <p><span class="word-design">Wrong words: </span><span> ${this.wordArr.join(" ")}</span></p>
                                 `
   }
 

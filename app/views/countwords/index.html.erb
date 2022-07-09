@@ -1,19 +1,21 @@
 <div class="container homedesign mt-5" data-controller= "wordcounters">
-  <div class="row mt-5">
-    <div class="col-6">
-      <h1>spellCorrect</h1><br>
-      <h4>Count every words and <span class= "highlight">chcek speling</span> errors!</h4><br><br>
+  <div class="row mt-5 gx-5">
+    <div class="col-12 col-md-5 phone-view p-3">
+      <h2 >spellCorrect</h2><br>
+      <h4>Count every words and <span class= "highlight">chcek speling</span> errors!</h4><br>
       <ol>
-        <p><li>Open-source illustrations for any idea you can imagine and create.</li></p><br>
         <p><li>Open-source illustrations for any idea you can imagine and create.</li></p>
-      </ol><br>
-      <h3>summary</h3><br>
-      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quas natus nisi deleniti molestiae reiciendis neque aspernatur cum, velit omnis soluta quo, temporibus, aliquam quisquam accusamus consequuntur doloribus! Dicta, qui quidem.
-      Fugiat qui asperiores possimus inventore sed nam delectus dolore libero animi praesentium aliquam, consequuntur ullam repudiandae vero molestiae recusandae nulla aperiam modi rem magnam repellat neque laudantium excepturi similique. Architecto.</p><br><br>
-      <h3>what you can do</h3><br>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique animi tenetur iusto, accusamus amet soluta ratione? Delectus, eaque? Ad, reprehenderit. Optio voluptatem eveniet officiis cupiditate nobis labore, dolores reiciendis sunt.
-      Harum iusto, eveniet nisi incidunt dolor cumque nemo maiores libero quibusdam quia quidem quasi quaerat, aliquid distinctio esse delectus modi minima unde odit illum neque eligendi quis debitis. Ipsum, eos!</p><br><br><br><br>
-      <div>
+        <p><li>Open-source illustrations for any idea you can imagine and create.</li></p>
+      </ol>
+      <div class= "content">
+        <span><h3 style="margin-top:100px">summary</h3><br></span>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quas natus nisi deleniti molestiae reiciendis neque aspernatur cum, velit omnis soluta quo, temporibus, aliquam quisquam accusamus consequuntur doloribus! Dicta, qui quidem.
+          Fugiat qui asperiores possimus inventore sed nam delectus dolore libero animi praesentium aliquam, consequuntur ullam repudiandae vero molestiae recusandae nulla aperiam modi rem magnam repellat neque laudantium excepturi similique. Architecto.</p><br><br>
+        <h3>what you can do</h3><br>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique animi tenetur iusto, accusamus amet soluta ratione? Delectus, eaque? Ad, reprehenderit. Optio voluptatem eveniet officiis cupiditate nobis labore, dolores reiciendis sunt.
+          Harum iusto, eveniet nisi incidunt dolor cumque nemo maiores libero quibusdam quia quidem quasi quaerat, aliquid distinctio esse delectus modi ipsum dolor sit minima unde odit illum neque eligendi quis debitis. Ipsum, eos!</p><br><br><br><br>
+      </div>
+      <div class = "content">
         <ul>
           <li><a href="#">contact</a></li>
           <li><a href="#">more tools</a></li>
@@ -21,20 +23,33 @@
         </ul>
       </div>
     </div>
-    <div class="col-6">
+    <div class="col-12 col-md-7 p-3">
       <%= simple_form_for @countword, data: { action: "keyup->wordcounters#send"} do |f| %>
         <%= f.input :words, input_html: { data: { wordcounters_target: "form" , controller: "textarea-autogrow" , action: "select->wordcounters#hightlight"} , class: "form"}  %>
-      <% end %>
-      <div class="mt-4" data-wordcounters-target="item">
-        <p>Character count: <span> 0 </span></p>
-        <p>Character count without spaces: <span> 0 </span> </p>
-        <p>Line count: <span> 0 </span> </p>
-        <p>Word count: <span> 0 </span></p>
-        <p>Sentence count: <span> 0 </span></p>
-        <p>Error count: <span> 0 </span></p>
-        <p>paragraph_count: <span> 0 </span></p>
-        <p>Wrong words: <span> Nil</span></p>
+      <% end %> <br>
+      <button type="button" class="btn btn-primary w-100">Reset Counter</button>
+      <div class="mt-4" style="padding-right: 0px; padding-left: 16px; padding-top: 16px" data-wordcounters-target="item">
+        <div><p><span class="word-design">Character count: </span>  <span> 0 </span></p>
+        <p><span class="word-design">Character count without spaces: </span><span> 0 </span> </p>
+        <p><span class="word-design">Line count: </span><span> 0 </span> </p>
+        <p><span class="word-design">Word count: </span><span> 0 </span></p>
+        <p><span class="word-design">Sentence count: </span><span> 0 </span></p>
+        <p><span class="word-design">Wrong words count: </span><span> 0 </span></p>
+        <p><span class="word-design">Paragraph count: </span><span> 0 </span></p>
+        <p><span class="word-design">Wrong words: </span><span> Nil</span></p>
+        </div>
       </div>
     </div>
   </div>
+  <div class="phone-only">
+    <h3>summary</h3><br>
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Provident laboriosam, reiciendis aperiam numquam quidem dignissimos esse aspernatur fugit odit dolore dolorum, perspiciatis optio, inventore blanditiis repellendus iste ullam aliquam. Quo.</p>
+  </div>
+  <div class="phone-only" >
+        <ul>
+          <li><a href="#">contact</a></li>
+          <li><a href="#">more tools</a></li>
+          <li><a href="#">feedback</a></li>
+        </ul>
+      </div>
 </div>

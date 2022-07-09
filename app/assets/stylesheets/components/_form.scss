@@ -3,3 +3,66 @@
   min-height: 610px;
   border-radius: 8px;
 }
+
+.form-control {
+  background-color: white;
+}
+
+.phone-only{
+  display: none;
+}
+
+@media (max-width:  560px) {
+
+
+ .phone-view h4 {
+    font-size: 18px;
+    padding: 0 20px;
+ }
+
+ .content {
+  display: none;
+ }
+
+ .form-label {
+  margin-bottom: 0.5rem;
+  width: 100%;
+  text-align: center;
+  font-family: 'Mulish', sans-serif;
+  font-weight: 900;
+}
+
+#countword_words {
+  min-height: 300px;
+  border-radius: 8px;
+}
+
+.phone-only{
+  display: block;
+}
+
+.phone-view h2 {
+  font-family: 'Mulish', sans-serif;
+  font-weight: 900;
+  font-size: 32px;
+  padding-left: 20px;
+}
+
+.phone-view ol p {
+  padding: 0 20px;
+}
+
+.phone-only h3 {
+  margin-top: 34px;
+}
+
+.phone-only ul {
+  margin-top: 34px;
+  li a {
+    font-size: 14px;
+  }
+}
+
+
+
+}
