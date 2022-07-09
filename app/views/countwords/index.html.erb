@@ -27,7 +27,9 @@
       <%= simple_form_for @countword, data: { action: "keyup->wordcounters#send"} do |f| %>
         <%= f.input :words, input_html: { data: { wordcounters_target: "form" , controller: "textarea-autogrow" , action: "select->wordcounters#hightlight"} , class: "form"}  %>
       <% end %> <br>
-      <button type="button" class="btn btn-primary w-100">Reset Counter</button>
+      <div data-controller="refresh-page">
+        <span data-action="click->refresh-page#refresh"><button type="button" class="btn btn-primary w-100">Reset Counter</button></span>
+      </div>
       <div class="mt-4" style="padding-right: 0px; padding-left: 16px; padding-top: 16px" data-wordcounters-target="item">
         <div><p><span class="word-design">Character count: </span>  <span> 0 </span></p>
         <p><span class="word-design">Character count without spaces: </span><span> 0 </span> </p>

@@ -7,8 +7,8 @@ import { application } from "./application"
 import HelloController from "./hello_controller.js"
 application.register("hello", HelloController)
 
+import RefreshPageController from "./refresh_page_controller.js"
+application.register("refresh-page", RefreshPageController)
+
 import WordcountersController from "./wordcounters_controller.js"
 application.register("wordcounters", WordcountersController)
-
-import TextareaAutogrow from 'stimulus-textarea-autogrow'
-application.register('textarea-autogrow', TextareaAutogrow)
