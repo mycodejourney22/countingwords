@@ -63,6 +63,20 @@
   }
 }
 
+.click-dark, .click-light {
+  cursor: pointer;
+  font-size: small;
+  padding-left: 16px;
+}
 
+
+.body p {
+  color: white;
+  font-size: smaller;
+}
+
+.phone-only p, #word p {
+  font-size: smaller;
+}
 
 }
