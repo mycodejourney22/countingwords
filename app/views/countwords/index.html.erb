@@ -1,4 +1,9 @@
 <div class="container homedesign mt-5" data-controller= "wordcounters">
+<nav class="navbar  navbar-mobile fixed-top navbar-light bg-light" data-controller="navbar" data-action="scroll@window->navbar#updateNavbar">
+  <div class="container-fluid">
+    <h2><a class="navbar-brand" href="#">spellCorrect</a></h2>
+  </div>
+</nav>
   <div class="row mt-5 gx-5">
     <div class="col-12 col-md-5 phone-view p-3">
       <h2 >spellCorrect</h2><br>
@@ -9,8 +14,8 @@
       </ol>
       <div class= "content">
         <span><h3 style="margin-top:100px">summary</h3><br></span>
-        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quas natus nisi deleniti molestiae reiciendis neque aspernatur cum, velit omnis soluta quo, temporibus, aliquam quisquam accusamus consequuntur doloribus! Dicta, qui quidem.
-          Fugiat qui asperiores possimus inventore sed nam delectus dolore libero animi praesentium aliquam, consequuntur ullam repudiandae vero molestiae recusandae nulla aperiam modi rem magnam repellat neque laudantium excepturi similique. Architecto.</p><br><br>
+        <p>spellCorrect is a language tool app that helps brings convenience to your writing. To keep track what you have been writing , we help you analyse every sentence and give you a break down reports of words to suits your professionalism and usage.</p>
+        <p> spellCorrect also has an in built system that helps you detect wrong spellings and provide suggestions on alternative words to use.</p><br><br>
         <h3>what you can do</h3><br>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique animi tenetur iusto, accusamus amet soluta ratione? Delectus, eaque? Ad, reprehenderit. Optio voluptatem eveniet officiis cupiditate nobis labore, dolores reiciendis sunt.
           Harum iusto, eveniet nisi incidunt dolor cumque nemo maiores libero quibusdam quia quidem quasi quaerat, aliquid distinctio esse delectus modi ipsum dolor sit minima unde odit illum neque eligendi quis debitis. Ipsum, eos!</p><br><br><br><br>
@@ -26,11 +31,8 @@
     <div class="col-12 col-md-7 p-3">
       <%= simple_form_for @countword, data: { action: "keyup->wordcounters#send"} do |f| %>
         <%= f.input :words, input_html: { data: { wordcounters_target: "form" , controller: "textarea-autogrow" , action: "select->wordcounters#hightlight"} , class: "form"}  %>
-      <% end %> <br>
-      <div data-controller="refresh-page">
-        <span data-action="click->refresh-page#refresh"><button type="button" class="btn btn-primary w-100">Reset Counter</button></span>
-      </div>
-      <div class="mt-4" style="padding-right: 0px; padding-left: 16px; padding-top: 16px" data-wordcounters-target="item">
+      <% end %>
+      <div id="word" style="padding-right: 0px; padding-left: 16px; padding-top: 16px" data-wordcounters-target="item">
         <div><p><span class="word-design">Character count: </span>  <span> 0 </span></p>
         <p><span class="word-design">Character count without spaces: </span><span> 0 </span> </p>
         <p><span class="word-design">Line count: </span><span> 0 </span> </p>
@@ -40,6 +42,9 @@
         <p><span class="word-design">Paragraph count: </span><span> 0 </span></p>
         <p><span class="word-design">Wrong words: </span><span> Nil</span></p>
         </div>
+      </div>
+      <div data-controller="refresh-page">
+        <span data-action="click->refresh-page#refresh"><button type="button" class="btn btn-primary w-100">Reset Counter</button></span>
       </div>
     </div>
   </div>

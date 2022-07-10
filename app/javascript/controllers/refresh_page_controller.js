@@ -9,4 +9,5 @@ export default class extends Controller {
   refresh () {
     window.location.reload();
   }
+
 }
