@@ -13,11 +13,11 @@ h4, h3 {
   font-family: 'Mulish', sans-serif;
 }
 
-@media (min-width: 1400px) {
-  .container{
-      max-width: 1350px;
-  }
-}
+// @media (min-width: 1400px) {
+//   .container{
+//       max-width: 1350px;
+//   }
+// }
 
 .highlight{
   background-color: #C4E0E2;
@@ -30,7 +30,7 @@ h4, h3 {
 
 p {
   font-family: 'Mulish', sans-serif;
-  font-size: 20px;
+  font-size: 16px;
   line-height: 1.7rem;
   color: #58585D;
 }
