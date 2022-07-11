@@ -3,8 +3,14 @@ import { Controller } from "@hotwired/stimulus"
 // Connects to data-controller="wordcounters"
 export default class extends Controller {
   static targets = ["item", "form"]
+  static values = {
+    apiKey: String,
+  }
 
   connect() {
+
+    console.log(this.apiKeyValue);
+    console.log(this.element)
 
     const shortWords = `thiss is intresting intresting as
     intresting intresting`
@@ -13,7 +19,7 @@ export default class extends Controller {
       method: 'POST',
       headers: {
         'content-type': 'application/json',
-        'X-RapidAPI-Key': '3b739ff8d7msh80f76a14bca1cabp114681jsn833db6b65c4f',
+        'X-RapidAPI-Key': `${this.apiKeyValue}`,
         'X-RapidAPI-Host': 'jspell-checker.p.rapidapi.com'
       },
       body: `{"language":"enUS","fieldvalues":"${newWords}","config":{"forceUpperCase":false,"ignoreIrregularCaps":false,"ignoreFirstCaps":true,"ignoreNumbers":true,"ignoreUpper":false,"ignoreDouble":false,"ignoreWordsWithNumbers":true}}`
@@ -87,7 +93,7 @@ export default class extends Controller {
       method: 'POST',
       headers: {
         'content-type': 'application/json',
-        'X-RapidAPI-Key': '3b739ff8d7msh80f76a14bca1cabp114681jsn833db6b65c4f',
+        'X-RapidAPI-Key': `${this.apiKeyValue}`,
         'X-RapidAPI-Host': 'jspell-checker.p.rapidapi.com'
       },
       body: `{"language":"enUS","fieldvalues":"${newWord}","config":{"forceUpperCase":false,"ignoreIrregularCaps":false,"ignoreFirstCaps":true,"ignoreNumbers":true,"ignoreUpper":false,"ignoreDouble":false,"ignoreWordsWithNumbers":true}}`
