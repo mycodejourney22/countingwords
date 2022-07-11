@@ -10,6 +10,15 @@
   p {
     color: white;
   }
+
+  ul li a{
+    color: white;
+  }
+
+  ul li a:hover {
+    color: #C4E0E2;
+    text-decoration-color:white;
+  }
 }
 
 .click-dark{

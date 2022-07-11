@@ -19,11 +19,11 @@ h4 {
   font-size: 16px;
 }
 
-// @media (min-width: 1400px) {
-//   .container{
-//       max-width: 1350px;
-//   }
-// }
+@media (min-width: 1400px) {
+  .container{
+      max-width: 1100px;
+  }
+}
 
 .highlight{
   background-color: #C4E0E2;
@@ -46,6 +46,10 @@ h3 {
   font-weight: 900;
 }
 
+ol {
+  padding-left: 16px;
+}
+
 ol li {
   font-family: 'Mulish', sans-serif;
 }
@@ -65,9 +69,9 @@ ul li {
 
 
 ul li a {
-  color: white;
+  color: black;
   text-decoration-color:#C4E0E2;
-  font-size: 20px;
+  font-size: 12px;
 }
 
 ul li a:hover {
