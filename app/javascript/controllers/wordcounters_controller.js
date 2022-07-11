@@ -9,26 +9,6 @@ export default class extends Controller {
 
   connect() {
 
-    console.log(this.apiKeyValue);
-    console.log(this.element)
-
-    const shortWords = `thiss is intresting intresting as
-    intresting intresting`
-    const newWords = shortWords.replace(/\r\n|\n|\r/g, "")
-    const options = {
-      method: 'POST',
-      headers: {
-        'content-type': 'application/json',
-        'X-RapidAPI-Key': `${this.apiKeyValue}`,
-        'X-RapidAPI-Host': 'jspell-checker.p.rapidapi.com'
-      },
-      body: `{"language":"enUS","fieldvalues":"${newWords}","config":{"forceUpperCase":false,"ignoreIrregularCaps":false,"ignoreFirstCaps":true,"ignoreNumbers":true,"ignoreUpper":false,"ignoreDouble":false,"ignoreWordsWithNumbers":true}}`
-    };
-
-    fetch('https://jspell-checker.p.rapidapi.com/check', options)
-      .then(response => response.json())
-      .then(response => console.log(response))
-      .catch(err => console.error(err));
   }
 
   send (event) {
