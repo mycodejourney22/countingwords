@@ -11,18 +11,18 @@ export default class extends Controller {
 
   }
 
-  send (event) {
+  send(event) {
     event.preventDefault();
     const myWords = this.formTarget.value
     this.#spellWords(myWords)
   }
 
-  hightlight (event) {
+  hightlight() {
     let selectArea = ""
     if (document.getSelection) {
-      selectArea =  document.getSelection().toString()
-    } else if ( document.selection) {
-      selectArea =  document.createRange().text
+      selectArea = document.getSelection().toString()
+    } else if (document.selection) {
+      selectArea = document.createRange().text
     }
     this.#spellWords(selectArea)
   }
@@ -36,38 +36,36 @@ export default class extends Controller {
 
 
 
-
-
-
-
-
-  #forWords (myWord, data) {
+  #forWords(myWord, data) {
     this.wordArr = []
     this.errorCount = data.spellingErrorCount
-    if (data.spellingErrorCount > 0 ) {
+    if (data.spellingErrorCount > 0) {
       const insidewords = data.elements[0].errors
-      insidewords.forEach ((item) => {
-      this.wordArr.push(item.word)
-    })}
-    else { this.wordArr.push("Nil")}
+      insidewords.forEach((item) => {
+        this.wordArr.push(item.word)
+      })
+    }
+    else { this.wordArr.push("Nil") }
     const charaWord = myWord.length
     const nospaceChar = myWord.replace(/\s/g, '').length
     const wordCount = myWord.match(/\w+-?'?\w*/g).length
     const sentCount = myWord.split('.').length
     const paraCount = myWord.split("\n\n").length
     const lineCount = myWord.split(/\r\n|\r|\n/).length
-    this.itemTarget.innerHTML =  `<p><span class="word-design">Character count: </span>  <span> ${charaWord} </span></p>
+    this.itemTarget.innerHTML = `<p><span class="word-design">Character count: </span>  <span> ${charaWord} </span></p>
                                   <p><span class="word-design">Character count without spaces: </span><span> ${nospaceChar} </span> </p>
                                   <p><span class="word-design">Line count: </span><span> ${lineCount} </span> </p>
                                   <p><span class="word-design">Word count: </span><span> ${wordCount} </span></p>
                                   <p><span class="word-design">Sentence count: </span><span> ${sentCount} </span></p>
                                   <p><span class="word-design">Wrong words count: </span><span> ${this.errorCount} </span></p>
                                   <p><span class="word-design">Paragraph count: </span><span> ${paraCount} </span></p>
-                                  <p><span class="word-design">Wrong words: </span><span> ${this.wordArr.join(" ")}</span></p>
-                                `
+                                  <p><span class="word-design">Wrong words: </span><span> ${this.wordArr.join(" ")}</span></p>`
+
   }
 
-  #spellWords (myWord) {
+
+
+  #spellWords(myWord) {
     const newWord = myWord.replace(/\r\n|\r|\n/g, " ")
     fetch('https://jspell-checker.p.rapidapi.com/check', {
       method: 'POST',
@@ -77,7 +75,7 @@ export default class extends Controller {
         'X-RapidAPI-Host': 'jspell-checker.p.rapidapi.com'
       },
       body: `{"language":"enUS","fieldvalues":"${newWord}","config":{"forceUpperCase":false,"ignoreIrregularCaps":false,"ignoreFirstCaps":true,"ignoreNumbers":true,"ignoreUpper":false,"ignoreDouble":false,"ignoreWordsWithNumbers":true}}`
-    } )
+    })
       .then(response => response.json())
       .then(data => this.#forWords(myWord, data))
       .catch(err => console.error(err));

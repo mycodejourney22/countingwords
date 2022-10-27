@@ -6,13 +6,10 @@ export default class extends Controller {
 
 
   connect() {
-    console.log("I am connected!!!!")
-    console.log(this.darkTarget)
-    console.log(this.lightTarget)
+
   }
 
-  changemode () {
-    console.log(this.element)
+  changemode() {
     this.element.classList.toggle("body")
     this.darkTarget.classList.toggle("d-none")
     this.lightTarget.classList.toggle("d-none")
